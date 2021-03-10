@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <math.h>
+void brojDelilaca(int n){
+// broj delilaca je bar 1 -- sam taj broj
+int br = 1; int prost[1000]; int k=1; //deklarisemo niz delilaca I njegovu velicinu k
+for (int i = 1; i < n; i++)
+{
+	if (n % i == 0)
+	{br++;prost[k]=i; k++;}
+}
+for(int h=0;h<=br;h++)
+{ 
+  printf("%d", prost[h]);
+  if(prost[h]==1){printf("delilac je prost");}
+}// stampa nam nam niz delilaca 
+}
+
+int BrojDelilaca(int n){
+// broj delilaca je bar 1 -- sam taj broj
+int br = 1; int prost[1000]; int k=1; //deklarisemo niz delilaca I njegovu velicinu k
+for (int i = 1; i < n; i++)
+{
+	if (n % i == 0)
+	{br++;prost[k]=i; k++;}
+}
+return prost[br];
+return br;// vraca nam niz delilaca i broj br=k//broj delilaca jednak je velicini niza k, u tome se razlikuje od prve funkcije
+}
+
+int eratosten(int n)
+{
+  int broj_delilaca=2;int d;
+
+	/* svi ostali delioci su brojevi iz skupa 2, 3, 4, ..., n/2 */
+	for(d=2; d<=n/2; d++)
+  {
+		/* proveravamo da li delilac d deli broj n */
+		if(n%d==0)
+    {
+			/* i ako deli uvecavamo broj delilaca za 1 */
+			broj_delilaca++;
+    }
+	}
+		
+	
+	/* ako je broj delilaca ostao 2 broj je prost */
+	if(broj_delilaca==2)
+  {
+		return 1;
+  }
+	else
+  {
+		/* inace broj nije prost */
+		return 0;
+  }
+		
+	
+}
+
+int sumaDelilaca(int n)
+{
+// n je uvek sam sebi delilac
+int suma = n;
+for (int i = 1; i < n; i++)
+{
+if(n % i == 0) 
+{
+  suma += i;
+  }}
+return suma;
+}
+
+
+int main()
+{
+  int n;
+  printf("unesi n");
+  scanf("%d",&n);
+  sumaDelilaca(n);
+  printf(" ");
+  brojDelilaca(n);
+  
+
+  
+}
